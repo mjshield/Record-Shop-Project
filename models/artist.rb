@@ -18,4 +18,10 @@ class Artist
     @id = result['id'].to_i
   end
 
+
+  def self.delete_all()
+    sql = "DELETE FROM artists;"
+    SqlRunner.run(sql)
+  end
+
 end

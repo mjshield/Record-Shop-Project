@@ -21,11 +21,20 @@ class Album
     @id = result['id'].to_i
   end
 
+  def self.find(search_id)
+    sql = "SELECT * FROM albums WHERE id = #{search_id}"
+    return self.map_items(sql).first
+  end
+
   def self.find_all()
     sql = "SELECT * FROM albums;"
     return self.map_items(sql)
   end
 
+  def self.delete_all()
+    sql = "DELETE FROM albums;"
+    SqlRunner.run(sql)
+  end
 
   def self.map_items(sql)
     results = SqlRunner.run(sql)
