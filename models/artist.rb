@@ -18,10 +18,19 @@ class Artist
     @id = result['id'].to_i
   end
 
+  def self.find_all()
+    sql = "SELECT * FROM artists;"
+    return self.map_items(sql)
+  end
 
   def self.delete_all()
     sql = "DELETE FROM artists;"
     SqlRunner.run(sql)
+  end
+
+  def self.map_items(sql)
+    results = SqlRunner.run(sql)
+    return results.map{ |artist| Artist.new(artist) }
   end
 
 end
