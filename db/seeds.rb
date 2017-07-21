@@ -6,7 +6,13 @@ artist1 = Artist.new(
   'first_name' => 'Lady',
   'last_name' => 'Gaga'
   )
+artist2 = Artist.new(
+  'first_name' => 'Elvis',
+  'last_name' => 'Presley'
+  )
+
 artist1.save()
+artist2.save()
 
 
 album1 = Album.new(
@@ -16,8 +22,16 @@ album1 = Album.new(
   'current_stock' => 8,
   'ideal_stock' => 10
   )
-album1.save()
+album2 = Album.new(
+  'title' => 'Promised Land',
+  'genre' => 'Pop',
+  'artist' => 'Elvis Presley',
+  'current_stock' => 4,
+  'ideal_stock' => 20
+ )
 
+album1.save()
+album2.save()
 
 
 
