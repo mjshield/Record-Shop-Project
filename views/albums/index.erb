@@ -1,0 +1,16 @@
+<h2>Inventory:</h2>
+
+<div id="inventory-wrapper">
+  <% @albums.each do |album| %>
+
+  <div>
+    <p>title: <%= album.title %></p>
+    <p>artist: <%= album.artist %></p>
+    <p>genre: <%= album.genre %></p>
+    <p>stock level: PLACEHOLDER</p>
+    <br>
+  </div>
+
+  <% end %>
+  
+</div>
