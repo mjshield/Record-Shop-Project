@@ -2,6 +2,8 @@ require_relative('../db/sql_runner')
 
 class Album
 
+  attr_reader :id, :title, :genre, :artist, :current_stock, :ideal_stock
+
   def initialize(params)
     @id = params['id'].to_i if params['id']
     @title = params['title']
@@ -13,8 +15,8 @@ class Album
 
   def save()
     sql = "INSERT INTO albums (title, genre, artist, current_stock, ideal_stock)
-      VALUES ('#{@title}', '#{@genre}', '#{@artist}', #{@current_stock}, #{@ideal_stock} )
-      RETURNING id;"
+          VALUES ('#{@title}', '#{@genre}', '#{@artist}', #{@current_stock}, #{@ideal_stock} )
+          RETURNING id;"
     result = SqlRunner.run(sql).first
     @id = result['id'].to_i
   end
