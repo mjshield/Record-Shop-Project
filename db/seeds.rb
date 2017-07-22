@@ -2,17 +2,13 @@ require_relative('../models/album.rb')
 require_relative('../models/artist.rb')
 require('pry')
 
-Artist.delete_all
-Album.delete_all
 
 artist1 = Artist.new(
-  'first_name' => 'Lady',
-  'last_name' => 'Gaga'
+  'artist_name' => 'Lady Gaga'
   )
 
 artist2 = Artist.new(
-  'first_name' => 'Elvis',
-  'last_name' => 'Presley'
+  'artist_name' => 'Elvis Presley'
   )
 
 artist1.save()
@@ -22,7 +18,7 @@ artist2.save()
 album1 = Album.new(
   'title' => 'The Fame',
   'genre' => 'Pop',
-  'artist' => 'Lady Gaga',
+  'artist_id' => artist1.id,
   'current_stock' => 8,
   'ideal_stock' => 10
   )
@@ -30,7 +26,7 @@ album1 = Album.new(
 album2 = Album.new(
   'title' => 'Promised Land',
   'genre' => 'Pop',
-  'artist' => 'Elvis Presley',
+  'artist_id' => artist2.id,
   'current_stock' => 4,
   'ideal_stock' => 20
  )

@@ -2,27 +2,33 @@ require_relative('../db/sql_runner')
 
 class Album
 
-  attr_reader :id, :title, :genre, :artist, :current_stock, :ideal_stock
+  attr_accessor :title, :genre, :artist_id, :current_stock, :ideal_stock
+  attr_reader :id
 
   def initialize(params)
     @id = params['id'].to_i if params['id']
     @title = params['title']
     @genre = params['genre']
-    @artist = params['artist']
+    @artist_id = params['artist_id'].to_i
     @current_stock = params['current_stock'].to_i
     @ideal_stock = params['ideal_stock'].to_i
   end
 
   def save()
-    sql = "INSERT INTO albums (title, genre, artist, current_stock, ideal_stock)
-          VALUES ('#{@title}', '#{@genre}', '#{@artist}', #{@current_stock}, #{@ideal_stock} )
+    sql = "INSERT INTO albums (title, genre, artist_id, current_stock, ideal_stock)
+          VALUES ('#{@title}', '#{@genre}', #{@artist_id}, #{@current_stock}, #{@ideal_stock} )
           RETURNING id;"
     result = SqlRunner.run(sql).first
     @id = result['id'].to_i
   end
 
+  def artist()
+    artist = Artist.find(@artist_id)
+    return artist
+  end
+
   def self.find(search_id)
-    sql = "SELECT * FROM albums WHERE id = #{search_id}"
+    sql = "SELECT * FROM albums WHERE id = #{search_id};"
     return self.map_items(sql).first
   end
 

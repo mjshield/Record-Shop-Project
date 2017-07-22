@@ -1,6 +1,6 @@
 <h1>New album</h1>
 
-<form action="/albums" method="post">
+<form action="/albums" method="POST">
   <label for="title-field">Title:</label><br>
   <input type="text" name="title"><br>
 
@@ -16,7 +16,7 @@
   <label for="artist-selection">Artist:</label><br>
   <select name="artist">
    <% @artists.each do |artist| %>
-   <option value="<%= artist.first_name %>"><%= artist.first_name %></option>
+   <option value="<%= artist.id %>"><%= artist.artist_name %></option>
    <% end %>
  </select><br>
 

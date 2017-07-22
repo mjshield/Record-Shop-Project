@@ -20,5 +20,5 @@ end
 post '/albums' do
   album = Album.new(params)
   album.save()
-  redirect to '/albums'
+  redirect to("/albums")
 end

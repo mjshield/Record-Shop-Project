@@ -2,21 +2,25 @@ require_relative('../db/sql_runner')
 
 class Artist
 
-  attr_reader :id, :first_name, :last_name
+  attr_reader :id, :artist_name
 
   def initialize(params)
     @id = params['id'].to_i if params['id']
-    @first_name = params['first_name']
-    @last_name = params['last_name']
+    @artist_name = params['artist_name']
   end
 
   def save()
-    sql = "INSERT INTO artists (first_name, last_name) 
-          VALUES ('#{@first_name}', '#{@last_name}')
+    sql = "INSERT INTO artists (artist_name) 
+          VALUES ('#{@artist_name}')
           RETURNING id;"
     result = SqlRunner.run(sql).first
     @id = result['id'].to_i
   end
+
+ def self.find(search_id)
+   sql = "SELECT * FROM artists WHERE id = #{search_id};"
+   return self.map_items(sql).first
+ end
 
   def self.find_all()
     sql = "SELECT * FROM artists;"
