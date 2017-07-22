@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner')
+require('pry')
 
 class Album
 
@@ -25,6 +26,21 @@ class Album
   def artist()
     artist = Artist.find(@artist_id)
     return artist
+  end
+
+  def stock_level()
+    result = (@current_stock.to_f / @ideal_stock.to_f) * 100
+    percentage = result.to_i
+    case
+    when percentage >= 75
+      "High"
+    when percentage >= 50
+      "Medium"
+    when percentage < 50
+      "Low"
+    else
+      "ERROR: Calculation failed"
+    end
   end
 
   def self.find(search_id)
