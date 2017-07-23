@@ -32,11 +32,13 @@ class Album
     result = (@current_stock.to_f / @ideal_stock.to_f) * 100
     percentage = result.to_i
     case
-    when percentage >= 75
+    when percentage > 100
+      "Overstocked"
+    when percentage > 75
       "High"
-    when percentage >= 50
+    when percentage >= 40
       "Medium"
-    when percentage < 50
+    when percentage < 40
       "Low"
     else
       "ERROR: Calculation failed"

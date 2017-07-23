@@ -35,9 +35,18 @@ album2 = Album.new(
    'ideal_stock' => 10
   )
 
+ album4 = Album.new(
+   'title' => 'Promised Land',
+   'genre' => 'Pop',
+   'artist_id' => artist2.id,
+   'current_stock' => 51,
+   'ideal_stock' => 100
+  )
+
  p album1.stock_level
  p album2.stock_level
  p album3.stock_level
+ p album4.stock_level
 
  binding.pry
  nil
