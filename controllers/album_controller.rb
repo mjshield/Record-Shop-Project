@@ -22,3 +22,22 @@ post '/albums' do
   album.save()
   redirect to("/albums")
 end
+
+#SHOW
+get '/albums/:id' do
+  @album = Album.find(params['id'])
+  erb(:"albums/show")
+end
+
+
+#EDIT
+
+
+#UPDATE
+
+
+#DELETE
+
+
+#DESTROY
+

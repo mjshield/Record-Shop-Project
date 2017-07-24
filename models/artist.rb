@@ -2,7 +2,8 @@ require_relative('../db/sql_runner')
 
 class Artist
 
-  attr_reader :id, :artist_name
+  attr_accessor :artist_name
+  attr_reader :id
 
   def initialize(params)
     @id = params['id'].to_i if params['id']
