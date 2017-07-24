@@ -15,9 +15,9 @@ a:hover {
 }
 
 #menu {
-  width: 220px;
+  width: 400px;
   display: flex;
-  margin: 0 auto;
+  margin: auto;
   padding: 30px 50px;
 }
 
