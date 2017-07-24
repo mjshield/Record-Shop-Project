@@ -13,9 +13,8 @@
   <p>Albums by <%= @artist.artist_name %>:</p><br>
   <p><% @artist.albums.each do |album| %> </p>
     <p><a href="/albums/<%= album.id %>"><%= album.title %></a></p>
-    <p>Artist: <%= album.artist.artist_name.capitalize %></p>
     <p>Genre: <%= album.genre %></p>
-    <p>Stock level: <%= album.stock_level %></p>
+    <p>Stock Level: <%= album.stock_level %></p>
     <br>
   <% end %>
 </div>

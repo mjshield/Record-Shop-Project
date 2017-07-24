@@ -59,7 +59,7 @@ album4 = Album.new(
 album5 = Album.new(
   'title' => 'At Folsom Prison',
   'genre' => 'Pop',
-  'artist_id' => artist2.id,
+  'artist_id' => artist3.id,
   'current_stock' => 20,
   'ideal_stock' => 20
  )
