@@ -1,10 +1,11 @@
 <h2>Inventory:</h2>
 
 <div id="inventory-wrapper">
+
+  <a href="/albums/new">New Entry</a><br>
+
   <% @albums.each do |album| %>
-
   <div>
-
     <p><a href="/albums/<%= album.id %>"><%= album.title %></a></p>
     <p>Artist: <%= album.artist.artist_name.capitalize %></p>
     <p>Genre: <%= album.genre %></p>

@@ -18,10 +18,22 @@ class Artist
     @id = result['id'].to_i
   end
 
- def self.find(search_id)
+  def update()
+    sql = "UPDATE artists SET 
+     artist_name = '#{@artist_name}'
+     WHERE id = #{@id};"
+    SqlRunner.run(sql)
+  end
+
+  def delete()
+    sql = "DELETE FROM artists WHERE id = #{@id};"
+    SqlRunner.run(sql)
+  end
+
+  def self.find(search_id)
    sql = "SELECT * FROM artists WHERE id = #{search_id};"
    return self.map_items(sql).first
- end
+  end
 
   def self.find_all()
     sql = "SELECT * FROM artists;"

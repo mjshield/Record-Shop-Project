@@ -4,3 +4,7 @@
   <p>Name: <%= @artist.artist_name %></p>
   <br>
 </div>
+
+<a href="/artists/<%= @artist.id %>/edit">Edit</a><br>
+<form action="/artists/<%= @artist.id %>/delete" method="POST"><input type="submit" value="Delete"></form><br>
+<a href="/artists">Back</a><br>

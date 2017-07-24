@@ -45,7 +45,6 @@ post '/albums/:id' do
 end
 
 #DESTROY
-
 post '/albums/:id/delete' do
   album = Album.find(params['id'])
   album.delete

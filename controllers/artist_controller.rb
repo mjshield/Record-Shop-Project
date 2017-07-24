@@ -29,13 +29,21 @@ get '/artists/:id' do
 end
 
 #EDIT
-
+get '/artists/:id/edit' do
+  @artist = Artist.find(params['id'])
+  erb(:"artists/edit")
+end
 
 #UPDATE
-
-
-#DELETE
-
+post '/artists/:id' do
+  artist = Artist.new(params)
+  artist.update
+  redirect to("/artists/#{params['id']}")
+end
 
 #DESTROY
-
+post '/artists/:id/delete' do
+  artist = Artist.find(params['id'])
+  artist.delete
+  redirect to("/artists")
+end
