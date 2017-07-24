@@ -15,6 +15,7 @@
 
   <label for="artist-selection">Artist:</label><br>
   <select name="artist_id">
+   <option value="" disabled selected>please select an artist</option>
    <% @artists.each do |artist| %>
    <option value="<%= artist.id %>"><%= artist.artist_name %></option>
    <% end %>
