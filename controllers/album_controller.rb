@@ -31,13 +31,23 @@ end
 
 
 #EDIT
-
+get '/albums/:id/edit' do
+  @artists = Artist.find_all
+  @album = Album.find(params['id'])
+  erb(:"albums/edit")
+end
 
 #UPDATE
-
-
-#DELETE
-
+post '/albums/:id' do
+  album = Album.new(params)
+  album.update
+  redirect to("/albums/#{params['id']}")
+end
 
 #DESTROY
 
+post '/albums/:id/delete' do
+  album = Album.find(params['id'])
+  album.delete
+  redirect to("/albums")
+end

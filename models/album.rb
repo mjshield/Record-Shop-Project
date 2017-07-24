@@ -45,6 +45,22 @@ class Album
     end
   end
 
+  def update()
+    sql = "UPDATE albums SET 
+     title = '#{@title}',
+     genre = '#{@genre}',
+     artist_id = '#{@artist_id}', 
+     current_stock = '#{@current_stock}',
+     ideal_stock = '#{@ideal_stock}'
+     WHERE id = #{@id};"
+    SqlRunner.run(sql)
+  end
+
+  def delete()
+    sql = "DELETE FROM albums WHERE id = #{@id};"
+    SqlRunner.run(sql)
+  end
+
   def self.find(search_id)
     sql = "SELECT * FROM albums WHERE id = #{search_id};"
     return self.map_items(sql).first
