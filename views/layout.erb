@@ -8,13 +8,19 @@
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
+  <main class="flex flex--row">
   <nav id="menu">
-    <li class="menu-item"><a href='/albums'>Inventory</a></li>
-    <li class="menu-item"><a href='/artists'>Artists</a></li>
-    <li class="menu-item"><a href='/albums/new'>Add Album</a></li>
-    <li class="menu-item"><a href='/artists/new'>Add Artist</a></li>
+    <ul>
+    <li class="menu-item"><a href='/albums'>Inventory</a>   |   </li>
+    <li class="menu-item"><a href='/artists'>Artists</a>   |   </li>
+    <li class="menu-item"><a href='/albums/new'>Add Album</a>   |   </li>
+    <li class="menu-item"><a href='/artists/new'>Add Artist</a>   |   </li>
+    </ul>
   </nav>
   <h1 id="logo">Keith's Record Shop</h1>
-  <%= yield %>
+  <section id="content">
+    <%= yield %>
+  </section>
+  </main>
 </body>
 </html>
