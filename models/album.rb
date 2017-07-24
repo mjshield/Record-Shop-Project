@@ -28,12 +28,6 @@ class Album
     return artist
   end
 
-  def albums
-    sql = "SELECT * FROM albums WHERE artist_id = #{@id}"
-    results = SqlRunner.run(sql)
-    return results.map{ |album| Album.new(album) }
-  end
-
   def stock_level()
     result = (@current_stock.to_f / @ideal_stock.to_f) * 100
     percentage = result.to_i
