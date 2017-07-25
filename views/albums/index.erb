@@ -1,16 +1,17 @@
 <h2>Albums</h2>
 
-<div id="inventory-wrapper">
+<div class="inventory-wrapper">
 
   <% @albums.each do |album| %>
-  <div class="container">
-    <p><a href="/albums/<%= album.id %>"><%= album.title %></a></p>
-    <p>Artist: <%= album.artist.artist_name.capitalize %></p>
-    <p>Genre: <%= album.genre %></p>
-    <p>Stock Level: <%= album.stock_level %></p>
-    <br>
-  </div>
-
+    <a href="/albums/<%= album.id %>">
+    <div class="container">
+      <p><b><%= album.title %></b></p>
+      <p>Artist: <%= album.artist.artist_name.capitalize %></p>
+      <p>Genre: <%= album.genre %></p>
+      <p>Stock Level: <%= album.stock_level %></p>
+      <br>
+    </div>
+    </a>
   <% end %>
   
 </div>

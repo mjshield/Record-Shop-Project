@@ -1,45 +1,63 @@
 <h2>New Album</h2>
 
 <div>
+
   <div class="form-box">
+    <div class="form-wrapper">
     <form action="/albums" method="POST">
-      <label for="title-field">Title:</label><br>
-      <input type="text" name="title"><br>
 
-      <label for="genre-field">Genre:</label><br>
-      <input type="text" name="genre"><br>
+      <div class="form-el">
+        <label for="title-field">Title:</label><br>
+        <input type="text" name="title"><br>
+      </div>
 
-      <label for="current-stock-field">Current Stock:</label><br>
-      <input type="number" name="current_stock"><br>
+      <div class="form-el">
+        <label for="genre-field">Genre:</label><br>
+        <input type="text" name="genre"><br>
+      </div>
 
-      <label for="ideal-stock-field">Ideal Stock:</label><br>
-      <input type="number" name="ideal_stock"><br>
+      <div class="form-el">
+        <label for="current-stock-field">Current Stock:</label><br>
+        <input type="number" name="current_stock"><br>
+      </div>
 
-      <label for="artist-selection">Artist:</label><br>
-      <select name="artist_id">
-       <option value="" disabled selected>Select an artist:</option>
-       <% @artists.each do |artist| %>
-       <option value="<%= artist.id %>"><%= artist.artist_name %></option>
-       <% end %>
-     </select><br>
+      <div class="form-el">
+        <label for="ideal-stock-field">Ideal Stock:</label><br>
+        <input type="number" name="ideal_stock"><br>
+      </div>
 
+      <div class="form-el">
+        <label for="artist-selection">Artist:</label><br>
+        <select name="artist_id">
+         <option value="" disabled selected>Select an artist:</option>
+         <% @artists.each do |artist| %>
+         <option value="<%= artist.id %>"><%= artist.artist_name %></option>
+         <% end %>
+       </select><br>
+      </div>
 
-     <input class="btn btn--action" type='submit' value="Submit">
-   </form>
+      <div class="form-el">
+        <input class="btn btn--action" type='submit' value="Submit">
+      </div>
+
+    </form>
+    </div>
   </div>
 
- <div class="inventory-wrapper">
+  <div class="inventory-wrapper">
 
-  <% @albums.each do |album| %>
-  <div class="container">
-    <p><a href="/albums/<%= album.id %>"><%= album.title %></a></p>
-    <p>Artist: <%= album.artist.artist_name.capitalize %></p>
-    <p>Genre: <%= album.genre %></p>
-    <p>Stock Level: <%= album.stock_level %></p>
-    <br>
+    <% @albums.each do |album| %>
+    <a href="/albums/<%= album.id %>">
+      <div class="container">
+      <p><b><%= album.title %></b></p>
+        <p>Artist: <%= album.artist.artist_name.capitalize %></p>
+        <p>Genre: <%= album.genre %></p>
+        <p>Stock Level: <%= album.stock_level %></p>
+        <br>
+      </div>
+    </a>
+    <% end %>
+
   </div>
-  <% end %>
-
- </div>
 
 </div>

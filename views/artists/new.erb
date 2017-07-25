@@ -1,23 +1,33 @@
 <h2>New Artist</h2>
 
 <div>
+
   <div class="form-box">
-    <form action="/artists" method="POST">
-      <label for="name-field">Name:</label><br>
-      <input type="text" name="artist_name"><br>
+    <div class="form-wrapper">
+      <form action="/artists" method="POST">
 
+        <div class="form-el">
+        <label for="name-field">Name:</label><br>
+        <input type="text" name="artist_name"><br>
+        </div>
 
-      <input class="btn btn--action" type='submit' value="Submit">
-    </form>
+        <div class="form-el">
+        <input class="btn btn--action" type='submit' value="Submit">
+        </div>
+        
+      </form>
+    </div>
   </div>
 
   <div class="inventory-wrapper">
     <% @artists.each do |artist| %>
 
-    <div class="container">
-      <p><a href="/artists/<%= artist.id %>"><%= artist.artist_name %></a></p>
-      <br>
-    </div>
+    <a href="/artists/<%= artist.id %>">
+      <div class="container">
+        <p><b><%= artist.artist_name %></b></p>
+        <br>
+      </div>
+    </a>
 
     <% end %>
   </div>

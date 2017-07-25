@@ -1,9 +1,23 @@
-<h1>Edit artist</h1>
+<h2>Edit Artist</h2>
 
-<form action="/artists/<%= @artist.id %>" method="POST">
-  <label for="name-field">Name:</label><br>
-  <input type="text" name="artist_name" id="artist_name" value="<%= @artist.artist_name %>"><br>
+<div>
+  <div class="form-box">
+    <div class="form-wrapper">
 
+        <form action="/artists/<%= @artist.id %>" method="POST">
 
- <input class="btn btn--action" type='submit' value="Submit">
-</form>
+          <div class="form-el">
+            <label for="name-field">Name:</label><br>
+            <input type="text" name="artist_name" id="artist_name" value="<%= @artist.artist_name %>"><br>
+          </div>
+
+          <div class="form-el">
+            <input class="btn btn--action" type='submit' value="Submit">
+          </div>
+
+        </form>
+      
+
+    </div>
+  </div>
+</div>

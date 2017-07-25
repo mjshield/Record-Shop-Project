@@ -1,8 +1,12 @@
 body {
   padding: 30px;
   font-family: 'Roboto', sans-serif;
-  color: #ffffff;
+  letter-spacing: 1px;
+  color: #e2e2e2;
+  background-color: black;
   background-image: url("/record.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 a {
@@ -12,6 +16,13 @@ a {
 
 a:hover {
   color: white;
+/*  border-bottom: 2px solid;
+  border-color: #5DBCD2;*/
+}
+
+a:active {
+  font-weight: bold;
+
 }
 
 #menu {
@@ -20,7 +31,10 @@ a:hover {
   margin: auto;
   padding: 5px 20px;
   text-align: center;
-  align-self: center;
+  align-content: center;
+  background: #191919;
+  border-bottom: 3px solid;
+  border-bottom-color: #5DBCD2;
 }
 
 .menu-item {
@@ -35,14 +49,14 @@ a:hover {
 .inventory-wrapper {
   display: flex;
   flex-wrap: wrap;
-
-
+  width: 800px;
+  margin: 0 auto;
 }
 
 .form-box{
   border-right: 3px solid;
   border-right-color: #5DBCD2;
-  max-width: 200px;
+  width: 150px;
 /*  background: linear-gradient(to left, #4C6A82, #191919);   #5DBCD2*/
   background: #191919;
   margin-left: 0px;
@@ -51,26 +65,44 @@ a:hover {
 }
 
 .container{
-  border: 7px solid;
+  border: 4px solid;
   border-radius: 25px;
   border-color: #5292c4;
-  background-color: black;
+  background-color: #191919;
   margin: 0 30px 30px 0;  
   padding: 15px;
+ /* height: 170px;*/
   width: 170px;
+  text-align: center;
+  max-height: 170px;
   display: inline-block;
 }
 
 .form-el {
-  margin: 10px 0;
+  margin: 10px 5px;
+}
+
+.form-el select{
+  color: white;
+  width: 135px;
+  background: #2d2d2d;
+  border: 2px solid;
+  border-color: #467da8;
 }
 
 .form-wrapper .form-el input[type="submit" i] {
-  margin-left: 180px;
+  margin-top: 5px;
+  margin-left: 0px;
+  width: 135px;
+  color: white;
+  background: #2d2d2d;
+  border: 2px solid;
+  border-color: #467da8;
+
 }
 
 .form-wrapper .form-el label {
-  text-align: right;
+  text-align: left;
   display: inline-block;
   vertical-align: middle;
   width: 160px;

@@ -4,23 +4,22 @@
 <meta charset="utf-8">
   <title>Keith's Record Shop</title>
   <link rel="icon" href="/record_icon.ico" />
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
 </head>
-<h1 id="logo">Keith's Record Shop</h1>
+
 <body>
-  <main class="flex flex--row">
-  <nav id="menu">
-    <ul>
-    <li class="menu-item"><a href='/albums'>Albums</a>   |   </li>
-    <li class="menu-item"><a href='/artists'>Artists</a>   |   </li>
-    <li class="menu-item"><a href='/albums/new'>Add Album</a>   |   </li>
-    <li class="menu-item"><a href='/artists/new'>Add Artist</a>     </li>
-    </ul>
+  <header><h1 id="logo">Keith's Record Shop</h1></header>
+
+  <nav id="menu"> 
+    <li class="menu-item"><a href='/albums'>Albums</a></li>
+    <li class="menu-item"><a href='/artists'>Artists</a></li>
+    <li class="menu-item"><a href='/albums/new'>Add Album</a></li>
+    <li class="menu-item"><a href='/artists/new'>Add Artist</a></li> 
   </nav>
 
+  <main>
     <%= yield %>
-
   </main>
 </body>
 </html>

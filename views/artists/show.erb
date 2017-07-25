@@ -1,19 +1,33 @@
-<h2>Artist details:</h2>
+<h2><%= @artist.artist_name %></h2>
 
 <div>
-  <p>Name: <%= @artist.artist_name %></p>
-  <br>
-</div>
 
-<a href="/artists/<%= @artist.id %>/edit">Edit</a><br>
-<form action="/artists/<%= @artist.id %>/delete" method="POST"><input type="submit" value="Delete"></form><br>
+  <div class="form-box">
+    <div class="form-wrapper">
+      <div class="form-el">
+        <form action="/artists/<%= @artist.id %>/edit" method="GET"><input type="submit" value="Edit Artist"></form><br>
+      </div>
 
-<div>
-  <h3>Albums by <%= @artist.artist_name %>:</h3><br>
-  <p><% @artist.albums.each do |album| %> </p>
-    <p><a href="/albums/<%= album.id %>"><%= album.title %></a></p>
-    <p>Genre: <%= album.genre %></p>
-    <p>Stock Level: <%= album.stock_level %></p>
-    <br>
-  <% end %>
+
+      <div class="form-el">
+        <form action="/artists/<%= @artist.id %>/delete" method="POST"><input type="submit" value="Delete Artist"></form><br>
+      </div>
+    </div>
+  </div>
+
+  <div class="inventory-wrapper">
+
+    <p><% @artist.albums.each do |album| %> </p>
+    <a href="/albums/<%= album.id %>">
+    <div class="container">
+      <p><b><%= album.title %></b></p>
+      <p>Genre: <%= album.genre %></p>
+      <p>Stock Level: <%= album.stock_level %></p>
+      <br>
+    </div>
+    </a>
+
+    <% end %>
+
+  </div>
 </div>

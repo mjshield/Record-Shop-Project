@@ -1,13 +1,14 @@
 <h2>Artists</h2>
 
-<div id="inventory-wrapper">
+<div class="inventory-wrapper">
 
   <% @artists.each do |artist| %>
-
-  <div class="container">
-    <p><a href="/artists/<%= artist.id %>"><%= artist.artist_name %></a></p>
-    <br>
-  </div>
+  <a href="/artists/<%= artist.id %>">
+    <div class="container">
+      <p><b><%= artist.artist_name %></b></p>
+      <br>
+    </div>
+  </a>
 
   <% end %>
   
