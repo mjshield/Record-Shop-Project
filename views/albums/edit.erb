@@ -1,42 +1,46 @@
 <h2>Edit album</h2>
 
-<form action="/albums/<%= @album.id %>" method="POST">
-  <div class="form-wrapper">
+<div>
+  <div class="form-box">
+    <form action="/albums/<%= @album.id %>" method="POST">
+      <div class="form-wrapper">
 
-    <div class="form-el">
-      <label for="title-field">Title:</label><br>
-      <input type="text" name="title" id="title" value="<%= @album.title %>"><br>
-    </div>
+        <div class="form-el">
+          <label for="title-field">Title:</label><br>
+          <input type="text" name="title" id="title" value="<%= @album.title %>"><br>
+        </div>
 
-    <div class="form-el">
-      <label for="genre-field">Genre:</label><br>
-      <input type="text" name="genre" id="genre" value="<%= @album.genre %>"><br>
-    </div>
+        <div class="form-el">
+          <label for="genre-field">Genre:</label><br>
+          <input type="text" name="genre" id="genre" value="<%= @album.genre %>"><br>
+        </div>
 
-    <div class="form-el">
-      <label for="current-stock-field">Current Stock:</label><br>
-      <input type="number" name="current_stock" id="current_stock" value="<%= @album.current_stock %>"><br>
-    </div>
+        <div class="form-el">
+          <label for="current-stock-field">Current Stock:</label><br>
+          <input type="number" name="current_stock" id="current_stock" value="<%= @album.current_stock %>"><br>
+        </div>
 
-    <div class="form-el">
-      <label for="ideal-stock-field">Ideal Stock:</label><br>
-      <input type="number" name="ideal_stock" id="ideal_stock" value="<%= @album.ideal_stock %>"><br>
-    </div>
+        <div class="form-el">
+          <label for="ideal-stock-field">Ideal Stock:</label><br>
+          <input type="number" name="ideal_stock" id="ideal_stock" value="<%= @album.ideal_stock %>"><br>
+        </div>
 
-    <div class="form-el">
-      <label for="artist-selection">Artist:</label><br>
-      <select name="artist_id" id="album_select" selected="<%= @album.artist_id %>">
-       <% @artists.each do |artist| %>
-       <% if artist.id == @album.artist_id %>
-       <option value=<%= artist.id %> selected><%= artist.artist_name %></option>
-       <% else %>
-       <option value="<%= artist.id %>"><%= artist.artist_name %></option>
-       <% end %>
-       <% end %>
-     </select><br>
-   </div>
+        <div class="form-el">
+          <label for="artist-selection">Artist:</label><br>
+          <select name="artist_id" id="album_select" selected="<%= @album.artist_id %>">
+           <% @artists.each do |artist| %>
+           <% if artist.id == @album.artist_id %>
+           <option value=<%= artist.id %> selected><%= artist.artist_name %></option>
+           <% else %>
+           <option value="<%= artist.id %>"><%= artist.artist_name %></option>
+           <% end %>
+           <% end %>
+         </select><br>
+       </div>
 
-   <input class="btn btn--action" type='submit' value="Submit">
+       <input class="btn btn--action" type='submit' value="Submit">
 
+     </div>
+   </form>
  </div>
-</form>
+</div>

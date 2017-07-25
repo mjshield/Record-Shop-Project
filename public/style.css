@@ -32,23 +32,31 @@ a:hover {
   text-align: center;
 }
 
-#inventory-wrapper {
-  margin-left: 300px;
-  border-right: 5px solid;
-  border-color: lightblue;
-}
-.input-box{
-  border-right: 3px solid;
-  border-right-color: cyan;
+.inventory-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+
 
 }
+
+.form-box{
+  border-right: 3px solid;
+  border-right-color: #5DBCD2;
+  max-width: 200px;
+/*  background: linear-gradient(to left, #4C6A82, #191919);   #5DBCD2*/
+  background: #191919;
+  margin-left: 0px;
+  margin-right: 35px;
+  float: left
+}
+
 .container{
   border: 7px solid;
   border-radius: 25px;
-  border-color: lightblue;
+  border-color: #5292c4;
   background-color: black;
-  margin: 0 35px 30px 0;  
-  padding: 25px;
+  margin: 0 30px 30px 0;  
+  padding: 15px;
   width: 170px;
   display: inline-block;
 }

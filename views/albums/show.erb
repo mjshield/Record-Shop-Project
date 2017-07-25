@@ -1,12 +1,22 @@
 <h2>Album details:</h2>
 
 <div>
-  <p>Title: <%= @album.title %></p>
-  <p>Artist: <%= @album.artist.artist_name.capitalize %></p>
-  <p>Genre: <%= @album.genre %></p>
-  <p>Stock level: <%= @album.stock_level %></p>
-  <br>
+
+  <div class="form-box">
+    <a href="/albums/<%= @album.id %>/edit">Edit</a><br>
+    <form action="/albums/<%= @album.id %>/delete" method="POST"><input type="submit" value="Delete"></form><br>
+  </div>
+
+  <div class="inventory-wrapper">
+    <div class="container"
+    <p>Title: <%= @album.title %></p>
+    <p>Artist: <%= @album.artist.artist_name.capitalize %></p>
+    <p>Genre: <%= @album.genre %></p>
+    <p>Stock level: <%= @album.stock_level %></p>
+    <br>
+  </div>
 </div>
 
-<a href="/albums/<%= @album.id %>/edit">Edit</a><br>
-<form action="/albums/<%= @album.id %>/delete" method="POST"><input type="submit" value="Delete"></form><br>
+
+
+</div>
