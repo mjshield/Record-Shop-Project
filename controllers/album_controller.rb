@@ -9,6 +9,7 @@ end
 
 #NEW
 get '/albums/new' do
+  @albums = Album.find_all
   @artists = Artist.find_all
   erb(:"albums/new")
 end

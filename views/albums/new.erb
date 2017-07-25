@@ -1,5 +1,6 @@
-<h2>New album</h2>
+<h2>New Album</h2>
 
+<div id="input-box">
 <form action="/albums" method="POST">
   <label for="title-field">Title:</label><br>
   <input type="text" name="title"><br>
@@ -15,7 +16,7 @@
 
   <label for="artist-selection">Artist:</label><br>
   <select name="artist_id">
-   <option value="" disabled selected>please select an artist</option>
+   <option value="" disabled selected>Select an artist:</option>
    <% @artists.each do |artist| %>
    <option value="<%= artist.id %>"><%= artist.artist_name %></option>
    <% end %>
@@ -24,3 +25,19 @@
 
  <input class="btn btn--action" type='submit' value="Submit">
 </form>
+</div>
+
+<div id="inventory-wrapper">
+
+  <% @albums.each do |album| %>
+  <div class="container">
+    <p><a href="/albums/<%= album.id %>"><%= album.title %></a></p>
+    <p>Artist: <%= album.artist.artist_name.capitalize %></p>
+    <p>Genre: <%= album.genre %></p>
+    <p>Stock Level: <%= album.stock_level %></p>
+    <br>
+  </div>
+
+  <% end %>
+  
+</div>

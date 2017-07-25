@@ -18,7 +18,9 @@ a:hover {
   width: 400px;
   display: flex;
   margin: auto;
-  padding: 30px 50px;
+  padding: 5px 20px;
+  text-align: center;
+  align-self: center;
 }
 
 .menu-item {
@@ -32,12 +34,22 @@ a:hover {
 
 #inventory-wrapper {
   margin-left: 300px;
+  border-right: 5px solid;
+  border-color: lightblue;
+}
+.input-box{
+  border-right: 3px solid;
+  border-right-color: cyan;
+
 }
 .container{
-  border: 5px double;
+  border: 7px solid;
+  border-radius: 25px;
+  border-color: lightblue;
+  background-color: black;
   margin: 0 35px 30px 0;  
   padding: 25px;
-  width: 200px;
+  width: 170px;
   display: inline-block;
 }
 
