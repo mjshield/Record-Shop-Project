@@ -3,7 +3,7 @@ require('pry')
 
 class Album
 
-  attr_accessor :title, :genre, :artist_id, :current_stock, :ideal_stock
+  attr_accessor :title, :genre, :artist_id, :current_stock, :ideal_stock, :thumbnail
   attr_reader :id
 
   def initialize(params)
@@ -13,11 +13,12 @@ class Album
     @artist_id = params['artist_id'].to_i
     @current_stock = params['current_stock'].to_i
     @ideal_stock = params['ideal_stock'].to_i
+    @thumbnail = params['thumbnail']
   end
 
   def save()
-    sql = "INSERT INTO albums (title, genre, artist_id, current_stock, ideal_stock)
-          VALUES ('#{@title}', '#{@genre}', #{@artist_id}, #{@current_stock}, #{@ideal_stock} )
+    sql = "INSERT INTO albums (title, genre, artist_id, current_stock, ideal_stock, thumbnail)
+          VALUES ('#{@title}', '#{@genre}', #{@artist_id}, #{@current_stock}, #{@ideal_stock}, '#{@thumbnail}' )
           RETURNING id;"
     result = SqlRunner.run(sql).first
     @id = result['id'].to_i
@@ -33,7 +34,7 @@ class Album
     percentage = result.to_i
     case
     when percentage > 100
-      "Overstocked"
+      "overstocked"
     when percentage > 75
       "high"
     when percentage >= 40
@@ -55,7 +56,8 @@ class Album
      genre = '#{@genre}',
      artist_id = '#{@artist_id}', 
      current_stock = '#{@current_stock}',
-     ideal_stock = '#{@ideal_stock}'
+     ideal_stock = '#{@ideal_stock}',
+     thumbnail = '#{@thumbnail}'
      WHERE id = #{@id};"
     SqlRunner.run(sql)
   end

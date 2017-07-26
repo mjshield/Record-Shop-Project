@@ -26,6 +26,11 @@
         </div>
 
         <div class="form-el">
+          <label for="thumbnail-url-field">Thumbnail (url):</label><br>
+          <input type="text" name="thumbnail" id="thumbnail" value="<%= @album.thumbnail %>"<br>
+        </div>
+
+        <div class="form-el">
           <label for="artist-selection">Artist:</label><br>
           <select name="artist_id" id="album_select" selected="<%= @album.artist_id %>">
            <% @artists.each do |artist| %>

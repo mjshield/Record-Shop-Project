@@ -13,5 +13,6 @@ CREATE TABLE albums(
   genre VARCHAR(255),
   current_stock INT2,
   ideal_stock INT2,
+  thumbnail VARCHAR(255),
   artist_id INT4 REFERENCES artists(id)
 );

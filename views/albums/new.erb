@@ -27,6 +27,11 @@
       </div>
 
       <div class="form-el">
+        <label for="thumbnail-url-field">Thumbnail (url):</label><br>
+        <input type="text" name="thumbnail"><br>
+      </div>
+
+      <div class="form-el">
         <label for="artist-selection">Artist:</label><br>
         <select name="artist_id">
          <option value="" disabled selected>Select an artist:</option>
@@ -51,10 +56,10 @@
       <figure class="container">
                 
                 <div class="cd-cover">
-                  <img src="https://images-na.ssl-images-amazon.com/images/I/512ZpnnsB1L.jpg" alt="<%= album.title %>">
+                  <img src="<%= album.thumbnail %>" alt="<%= album.title %>">
                 </div>
                 <p><strong><%= album.title %></strong></p>
-                <p>Artist: <%= album.artist.artist_name.capitalize %></p>
+                <p>Artist: <%= album.artist.artist_name.split.map(&:capitalize).join(' ') %></p>
                 <p>Genre: <%= album.genre %></p>
                 <p>Stock Level: <text class="<%= album.stock_level %>"><%= album.stock_level %></text></p><br>
 

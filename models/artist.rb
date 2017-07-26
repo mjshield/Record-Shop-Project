@@ -7,7 +7,7 @@ class Artist
 
   def initialize(params)
     @id = params['id'].to_i if params['id']
-    @artist_name = params['artist_name']
+    @artist_name = params['artist_name'].split.map(&:capitalize).join(' ')
   end
 
   def save()

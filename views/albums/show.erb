@@ -23,7 +23,7 @@
     <figure class="container">
 
       <div class="cd-cover">
-        <img src="https://images-na.ssl-images-amazon.com/images/I/512ZpnnsB1L.jpg" alt="<%= @album.title %>">
+      <img src="<%= @album.thumbnail %>" alt="<%= @album.title %>">
       </div>
       <p><strong><%= @album.title %></strong></p>
       <p>Artist: <%= @album.artist.artist_name.capitalize %></p>

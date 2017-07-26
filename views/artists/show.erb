@@ -20,7 +20,7 @@
     <p><% @artist.albums.each do |album| %> </p>
       <figure class="container">
         <div class="cd-cover">
-          <img src="https://images-na.ssl-images-amazon.com/images/I/512ZpnnsB1L.jpg" alt="<%= album.title %>">
+          <img src="<%= album.thumbnail %>" alt="<%= album.title %>">
         </div>
         <p><stong><%= album.title %></strong></p>
         <p>Genre: <%= album.genre %></p>
