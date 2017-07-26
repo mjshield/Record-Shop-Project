@@ -18,14 +18,20 @@
     </div>
   </div>
 
-    <div class="inventory-wrapper">
-      <div class="container">
-      <p><b><%= @album.title %></b></p>
+  <div class="inventory-wrapper">
+
+    <figure class="container">
+
+      <div class="cd-cover">
+        <img src="https://images-na.ssl-images-amazon.com/images/I/512ZpnnsB1L.jpg" alt="<%= @album.title %>">
+      </div>
+      <p><strong><%= @album.title %></strong></p>
       <p>Artist: <%= @album.artist.artist_name.capitalize %></p>
       <p>Genre: <%= @album.genre %></p>
-      <p>Stock level: <%= @album.stock_level %></p>
-      <br>
-      </div>
-    </div>
+      <p>Stock Level: <text class="<%= @album.stock_level %>"><%= @album.stock_level %></text></p> 
+
+    </figure>
+
+  </div>
 
 </div>

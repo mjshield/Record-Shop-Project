@@ -8,7 +8,7 @@ class Album
 
   def initialize(params)
     @id = params['id'].to_i if params['id']
-    @title = params['title']
+    @title = params['title'].split.map(&:capitalize).join(' ')
     @genre = params['genre']
     @artist_id = params['artist_id'].to_i
     @current_stock = params['current_stock'].to_i
@@ -35,14 +35,18 @@ class Album
     when percentage > 100
       "Overstocked"
     when percentage > 75
-      "High"
+      "high"
     when percentage >= 40
-      "Medium"
+      "medium"
     when percentage < 40
-      "Low"
+      "low"
     else
       "ERROR: Calculation failed"
     end
+  end
+
+  def capitals
+
   end
 
   def update()

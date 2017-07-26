@@ -22,12 +22,12 @@
   <div class="inventory-wrapper">
     <% @artists.each do |artist| %>
 
-    <a href="/artists/<%= artist.id %>">
-      <div class="container">
-        <p><b><%= artist.artist_name %></b></p>
-        <br>
-      </div>
-    </a>
+      <figure class="container-artist">
+        <p><strong><%= artist.artist_name %></strong></p>
+        <p><a href="/artists/<%= artist.id %>">View</a></p>
+
+      </figure>
+    
 
     <% end %>
   </div>

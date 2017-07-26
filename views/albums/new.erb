@@ -47,15 +47,22 @@
   <div class="inventory-wrapper">
 
     <% @albums.each do |album| %>
-    <a href="/albums/<%= album.id %>">
-      <div class="container">
-      <p><b><%= album.title %></b></p>
-        <p>Artist: <%= album.artist.artist_name.capitalize %></p>
-        <p>Genre: <%= album.genre %></p>
-        <p>Stock Level: <%= album.stock_level %></p>
-        <br>
-      </div>
-    </a>
+    
+      <figure class="container">
+                
+                <div class="cd-cover">
+                  <img src="https://images-na.ssl-images-amazon.com/images/I/512ZpnnsB1L.jpg" alt="<%= album.title %>">
+                </div>
+                <p><strong><%= album.title %></strong></p>
+                <p>Artist: <%= album.artist.artist_name.capitalize %></p>
+                <p>Genre: <%= album.genre %></p>
+                <p>Stock Level: <text class="<%= album.stock_level %>"><%= album.stock_level %></text></p><br>
+
+                <p><a href="/albums/<%= album.id %>">View</a></p>
+
+
+              </figure>
+    
     <% end %>
 
   </div>
