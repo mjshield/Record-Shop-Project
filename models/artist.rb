@@ -32,8 +32,6 @@ class Artist
 
   def albums
     sql = "SELECT * FROM albums WHERE artist_id = #{@id}"
-    # results = SqlRunner.run(sql)
-    # return results.map{ |album| Album.new(album) }
     return Album.map_items(sql)
   end
 

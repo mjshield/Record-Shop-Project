@@ -2,25 +2,15 @@ require_relative('../models/album.rb')
 require_relative('../models/artist.rb')
 
 
-artist1 = Artist.new(
-  'artist_name' => 'Lady Gaga'
-  )
+artist1 = Artist.new('artist_name' => 'Lady Gaga')
 
-artist2 = Artist.new(
-  'artist_name' => 'Elvis Presley'
-  )
+artist2 = Artist.new('artist_name' => 'Elvis Presley')
 
-artist3 = Artist.new(
-  'artist_name' => 'Johnny Cash'
-  )
+artist3 = Artist.new('artist_name' => 'Johnny Cash')
 
-artist4 = Artist.new(
-  'artist_name' => 'Kanye West'
-  )
+artist4 = Artist.new('artist_name' => 'Kanye West')
 
-artist5 = Artist.new(
-  'artist_name' => 'Michael Jackson'
-  )
+artist5 = Artist.new('artist_name' => 'Michael Jackson')
 
 artist1.save()
 artist2.save()

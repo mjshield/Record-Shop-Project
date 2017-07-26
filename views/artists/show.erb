@@ -4,14 +4,15 @@
 
   <div class="form-box">
     <div class="form-wrapper">
+
       <div class="form-el">
         <form action="/artists/<%= @artist.id %>/edit" method="GET"><input type="submit" value="Edit Artist"></form><br>
       </div>
 
-
       <div class="form-el">
-        <form action="/artists/<%= @artist.id %>/delete" method="POST"><input type="submit" value="Delete Artist"></form><br>
+        <form action="/artists/<%= @artist.id %>/delete" method="POST"><input type="submit" value="Delete Artist"></form>
       </div>
+
     </div>
   </div>
 
@@ -19,6 +20,7 @@
 
     <p><% @artist.albums.each do |album| %> </p>
       <figure class="container">
+
         <div class="cd-cover">
           <img src="<%= album.thumbnail %>" alt="<%= album.title %>">
         </div>
@@ -27,8 +29,7 @@
         <p>Stock Level: <text class="<%= album.stock_level %>"><%= album.stock_level %></text></p><br>
       
         <p><a href="/albums/<%= album.id %>">View</a></p>
-
-
+        
       </figure>
     
 

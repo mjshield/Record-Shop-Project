@@ -1,5 +1,4 @@
 require_relative('../db/sql_runner')
-require('pry')
 
 class Album
 
@@ -44,10 +43,6 @@ class Album
     else
       "ERROR: Calculation failed"
     end
-  end
-
-  def capitals
-
   end
 
   def update()

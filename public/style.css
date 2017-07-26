@@ -16,13 +16,10 @@ a {
 
 a:hover {
   color: white;
-/*  border-bottom: 2px solid;
-  border-color: #5DBCD2;*/
 }
 
 a:active {
   font-weight: bold;
-
 }
 
 #menu {
@@ -56,7 +53,6 @@ a:active {
   border-right: 3px solid;
   border-right-color: #5DBCD2;
   width: 150px;
-/*  background: linear-gradient(to left, #4C6A82, #191919);   #5DBCD2*/
   background: #191919;
   margin-left: 0px;
   margin-right: 35px;
@@ -70,7 +66,6 @@ a:active {
   background-color: #191919;
   margin: 0 30px 30px 0;  
   padding: 7px;
- /* height: 170px;*/
   width: 180px;
   text-align: center;
   height: 330px;
@@ -84,7 +79,6 @@ a:active {
    background-color: #191919;
    margin: 0 30px 30px 0;  
    padding: 15px;
-  /* height: 170px;*/
    width: 170px;
    text-align: center;
    height: 120px;
@@ -122,11 +116,6 @@ a:active {
   margin: 0 1em 0 0;
 }
 
-/*.container p {
-  display: block;
-  height: 50px;
-}*/
-
 .cd-cover img {
   width: 100px;
   border-radius: 15px;
@@ -143,6 +132,7 @@ a:active {
   border: 2px solid;
   border-color: #467da8;
 }
+
 .container a:hover {
   background-color: #5292c4;
   color: #fff; 
@@ -159,6 +149,7 @@ a:active {
   border: 2px solid;
   border-color: #467da8;
 }
+
 .container-artist a:hover {
   background-color: #5292c4;
   color: #fff; 
